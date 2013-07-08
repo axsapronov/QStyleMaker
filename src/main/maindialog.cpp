@@ -48,12 +48,11 @@ void MainDialog::createConnects()
     connect(ui->pBQuit, SIGNAL(clicked()), this, SLOT(slotQuit()));
     connect(ui->pBTest, SIGNAL(clicked()), this, SLOT(slotTest()));
 
-    connect(ui->listWidget, SIGNAL(currentRowChanged(int)), ui->stackedWidget, SLOT(setCurrentIndex(int)));
     connect(ui->listWidget, SIGNAL(itemSelectionChanged()), this, SLOT(slotUpdatePreview()));
+    connect(ui->listWidget, SIGNAL(currentRowChanged(int)), this, SLOT(slotSelectTab(int)));
 
     connect(ui->pBAbout, SIGNAL(clicked()), this, SLOT(slotShowAboutDialog()));
     connect(ui->pBHomePage, SIGNAL(clicked()), this, SLOT(slotOpenHomePage()));
-
 }
 //------------------------------------------------------------------------------
 void MainDialog::slotQuit()
@@ -87,5 +86,10 @@ void MainDialog::slotShowAboutDialog()
 void MainDialog::slotOpenHomePage()
 {
     QDesktopServices::openUrl(QUrl(D_WEB_SITE));
+}
+//------------------------------------------------------------------------------
+void MainDialog::slotSelectTab(int f_numberTab)
+{
+    myDebug() << f_numberTab;
 }
 //------------------------------------------------------------------------------

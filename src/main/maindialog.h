@@ -29,6 +29,8 @@ private slots:
     void slotShowAboutDialog();
     void slotOpenHomePage();
 
+    void slotSelectTab(int);
+
 private:
     Ui::MainDialog *ui;
 
