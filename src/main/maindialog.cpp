@@ -108,7 +108,17 @@ void MainDialog::slotOpenHomePage()
 //------------------------------------------------------------------------------
 void MainDialog::slotSelectTab(int f_numberTab)
 {
-    myDebug() << f_numberTab;
-
+    ui->comBElements->clear();
+    switch ( f_numberTab )
+    {
+       case TAB_MAIN:
+          ui->comBElements->addItems(m_listMainSettings);
+          break;
+       case TAB_INNER:
+          ui->comBElements->addItems(m_listInnerSettings);
+          break;
+       default:
+        myDebug() << "[ERROR]";
+    }
 }
 //------------------------------------------------------------------------------

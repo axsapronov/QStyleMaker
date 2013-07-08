@@ -42,6 +42,9 @@ private:
 
     QStringList m_listMainSettings;
     QStringList m_listInnerSettings;
+
+    enum m_TABS {TAB_MAIN = 0,
+              TAB_INNER};
 };
 
 #endif // MAINDIALOG_H
