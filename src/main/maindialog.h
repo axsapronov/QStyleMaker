@@ -38,6 +38,7 @@ private slots:
     void slotPickColor();
 
     void slotSelectTab(int);
+    void slotResizePreview(int);
 
 private:
     Ui::MainDialog *ui;
@@ -54,6 +55,9 @@ private:
 
     enum m_TABS {TAB_MAIN = 0,
               TAB_INNER};
+
+    enum m_TABS_Q {TAB_BASIC = 0,
+              TAB_ADVANCE};
 
 };
 

@@ -14,26 +14,6 @@
    <string>MainDialog</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="0" rowspan="2">
-    <widget class="QListWidget" name="listWidget">
-     <property name="maximumSize">
-      <size>
-       <width>130</width>
-       <height>16777215</height>
-      </size>
-     </property>
-     <item>
-      <property name="text">
-       <string>Main</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Internal elements</string>
-      </property>
-     </item>
-    </widget>
-   </item>
    <item row="0" column="1">
     <widget class="QTabWidget" name="tabs">
      <property name="currentIndex">
@@ -52,7 +32,7 @@
          <property name="sizeHint" stdset="0">
           <size>
            <width>20</width>
-           <height>56</height>
+           <height>296</height>
           </size>
          </property>
         </spacer>
@@ -159,29 +139,6 @@
      </widget>
     </widget>
    </item>
-   <item row="1" column="1">
-    <widget class="QWidget" name="widgetView" native="true">
-     <property name="minimumSize">
-      <size>
-       <width>0</width>
-       <height>250</height>
-      </size>
-     </property>
-     <widget class="QPushButton" name="pushButton_4">
-      <property name="geometry">
-       <rect>
-        <x>200</x>
-        <y>20</y>
-        <width>83</width>
-        <height>25</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>PushButton</string>
-      </property>
-     </widget>
-    </widget>
-   </item>
    <item row="2" column="0">
     <widget class="QPushButton" name="pBHomePage">
      <property name="text">
@@ -219,6 +176,51 @@
       </widget>
      </item>
     </layout>
+   </item>
+   <item row="0" column="0" rowspan="2">
+    <widget class="QListWidget" name="listWidget">
+     <property name="maximumSize">
+      <size>
+       <width>130</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <item>
+      <property name="text">
+       <string>Main</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Internal elements</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QWidget" name="widgetView" native="true">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>400</height>
+      </size>
+     </property>
+     <widget class="QPushButton" name="pushButton_4">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>20</y>
+        <width>83</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>PushButton</string>
+      </property>
+     </widget>
+     <zorder>pushButton_4</zorder>
+     <zorder>pBTestDialog</zorder>
+    </widget>
    </item>
    <item row="3" column="0">
     <widget class="QPushButton" name="pBAbout">

@@ -33,6 +33,8 @@ void MainDialog::createConnects()
 
     connect(ui->pBAbout, SIGNAL(clicked()), this, SLOT(slotShowAboutDialog()));
     connect(ui->pBHomePage, SIGNAL(clicked()), this, SLOT(slotOpenHomePage()));
+
+    connect(ui->tabs, SIGNAL(currentChanged(int)), this, SLOT(slotResizePreview(int)));
 }
 //------------------------------------------------------------------------------
 void MainDialog::createGUI()

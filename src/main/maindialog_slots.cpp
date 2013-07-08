@@ -116,13 +116,23 @@ void MainDialog::slotPickColor()
     }
 }
 //------------------------------------------------------------------------------
+void MainDialog::slotResizePreview(int f_tabNumber)
+{
+    if (f_tabNumber == TAB_BASIC)
+        ui->widgetView->setMinimumHeight(400);
+    if (f_tabNumber == TAB_ADVANCE)
+        ui->widgetView->setMinimumHeight(200);
+}
+//------------------------------------------------------------------------------
 void MainDialog::slotShowTestDialog()
 {
+    GUI_TestDialog->setStyleSheet(ui->TECode->toPlainText());
     GUI_TestDialog->show();
 }
 //------------------------------------------------------------------------------
 void MainDialog::slotShowTestMainWindow()
 {
+    GUI_TestMainWindow->setStyleSheet(ui->TECode->toPlainText());
     GUI_TestMainWindow->show();
 }
 //------------------------------------------------------------------------------
