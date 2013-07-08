@@ -1,25 +1,19 @@
-#include "maindialog.h"
-#include "ui_maindialog.h"
+#include "testdialog.h"
+#include "ui_testdialog.h"
 
-MainDialog::MainDialog(QWidget *parent) :
+TestDialog::TestDialog(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::MainDialog)
+    ui(new Ui::TestDialog)
 {
     ui->setupUi(this);
-
-    createGUI();
-    createConnects();
 }
 //------------------------------------------------------------------------------
-MainDialog::~MainDialog()
+TestDialog::~TestDialog()
 {
-    //delete GUI_AboutDialog;
-    delete GUI_TestMainWindow;
-    delete GUI_TestDialog;
     delete ui;
 }
 //------------------------------------------------------------------------------
-void MainDialog::changeEvent(QEvent *e)
+void TestDialog::changeEvent(QEvent *e)
 {
     QDialog::changeEvent(e);
     switch (e->type()) {

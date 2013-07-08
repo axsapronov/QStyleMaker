@@ -10,6 +10,9 @@
 #include "src/dialogs/about/about.h"
 #include "src/defines/defines.h"
 
+#include "src/test/testdialog.h"
+#include "src/test/testmainwindow.h"
+
 #include "src/debug/debughelper.h"
 
 
@@ -19,11 +22,6 @@ void MainDialog::slotQuit()
     // save or not
     myDebug() << "Quit";
     qApp->quit();
-}
-//------------------------------------------------------------------------------
-void MainDialog::slotTest()
-{
-    myDebug() << "Test";
 }
 //------------------------------------------------------------------------------
 void MainDialog::slotSaveStyle()
@@ -79,4 +77,15 @@ void MainDialog::slotPickColor()
     }
 }
 //------------------------------------------------------------------------------
+void MainDialog::slotShowTestDialog()
+{
+    GUI_TestDialog->show();
+}
+//------------------------------------------------------------------------------
+void MainDialog::slotShowTestMainWindow()
+{
+    GUI_TestMainWindow->show();
+}
+//------------------------------------------------------------------------------
+
 

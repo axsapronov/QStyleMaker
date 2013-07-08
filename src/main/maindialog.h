@@ -5,6 +5,9 @@
 
 
 class AboutDialog;
+class TestMainWindow;
+class TestDialog;
+
 namespace Ui {
 class MainDialog;
 }
@@ -22,7 +25,8 @@ protected:
 
 private slots:
     void slotSaveStyle();
-    void slotTest();
+    void slotShowTestDialog();
+    void slotShowTestMainWindow();
     void slotQuit();
 
     void slotUpdatePreview();
@@ -39,7 +43,8 @@ private:
     Ui::MainDialog *ui;
 
     AboutDialog *GUI_AboutDialog;
-
+    TestMainWindow *GUI_TestMainWindow;
+    TestDialog *GUI_TestDialog;
 
     void createConnects();
     void createGUI();

@@ -34,84 +34,6 @@
      </item>
     </widget>
    </item>
-   <item row="1" column="1" rowspan="2">
-    <widget class="QWidget" name="widgetView" native="true">
-     <property name="minimumSize">
-      <size>
-       <width>0</width>
-       <height>250</height>
-      </size>
-     </property>
-     <widget class="QPushButton" name="pushButton_4">
-      <property name="geometry">
-       <rect>
-        <x>200</x>
-        <y>20</y>
-        <width>83</width>
-        <height>25</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>PushButton</string>
-      </property>
-     </widget>
-    </widget>
-   </item>
-   <item row="2" column="0">
-    <widget class="QPushButton" name="pBHomePage">
-     <property name="text">
-      <string>Home page</string>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="0">
-    <widget class="QPushButton" name="pBAbout">
-     <property name="text">
-      <string>About</string>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="1">
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <item>
-      <widget class="QPushButton" name="pBTest">
-       <property name="text">
-        <string>Test</string>
-       </property>
-       <property name="shortcut">
-        <string>Ctrl+T</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="pBLoad">
-       <property name="text">
-        <string>Load example</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="pBSave">
-       <property name="text">
-        <string>Save to file</string>
-       </property>
-       <property name="shortcut">
-        <string>Ctrl+Shift+S</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="pBQuit">
-       <property name="text">
-        <string>Quit</string>
-       </property>
-       <property name="shortcut">
-        <string>Ctrl+Q</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
    <item row="0" column="1">
     <widget class="QTabWidget" name="tabs">
      <property name="currentIndex">
@@ -130,7 +52,7 @@
          <property name="sizeHint" stdset="0">
           <size>
            <width>20</width>
-           <height>89</height>
+           <height>56</height>
           </size>
          </property>
         </spacer>
@@ -236,6 +158,92 @@
       </layout>
      </widget>
     </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QWidget" name="widgetView" native="true">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>250</height>
+      </size>
+     </property>
+     <widget class="QPushButton" name="pushButton_4">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>20</y>
+        <width>83</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>PushButton</string>
+      </property>
+     </widget>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QPushButton" name="pBHomePage">
+     <property name="text">
+      <string>Home page</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="pBLoad">
+       <property name="text">
+        <string>Load example</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pBSave">
+       <property name="text">
+        <string>Save to file</string>
+       </property>
+       <property name="shortcut">
+        <string>Ctrl+Shift+S</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pBQuit">
+       <property name="text">
+        <string>Quit</string>
+       </property>
+       <property name="shortcut">
+        <string>Ctrl+Q</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="3" column="0">
+    <widget class="QPushButton" name="pBAbout">
+     <property name="text">
+      <string>About</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <layout class="QHBoxLayout" name="horizontalLayout_4">
+     <item>
+      <widget class="QPushButton" name="pBTestDialog">
+       <property name="text">
+        <string>Test dialog</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pBTestMainWindow">
+       <property name="text">
+        <string>Test mainwindow</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </item>
   </layout>
  </widget>

@@ -37,16 +37,22 @@ SOURCES += main.cpp\
         src/dialogs/about/about.cpp \
         src/common/stringcommon.cpp \
     src/main/maindialog_slots.cpp \
-    src/main/maindialog_init.cpp
+    src/main/maindialog_init.cpp \
+    src/test/testdialog.cpp \
+    src/test/testmainwindow.cpp
 
 HEADERS  += maindialog.h \
         src/defines/defines.h \
         src/debug/debughelper.h \
         src/dialogs/about/about.h \
-        src/common/stringcommon.h
+        src/common/stringcommon.h \
+    src/test/testdialog.h \
+    src/test/testmainwindow.h
 
 FORMS    += maindialog.ui \
-        src/dialogs/about/about.ui
+        src/dialogs/about/about.ui \
+    src/test/testdialog.ui \
+    src/test/testmainwindow.ui
 
 RESOURCES += \
     resources/resources.qrc

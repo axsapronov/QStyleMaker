@@ -12,13 +12,18 @@
 
 #include "src/debug/debughelper.h"
 
+#include "src/test/testdialog.h"
+#include "src/test/testmainwindow.h"
+
 //------------------------------------------------------------------------------
 void MainDialog::createConnects()
 {
     connect(ui->pBSave, SIGNAL(clicked()), this, SLOT(slotSaveStyle()));
     connect(ui->pBQuit, SIGNAL(clicked()), this, SLOT(slotQuit()));
-    connect(ui->pBTest, SIGNAL(clicked()), this, SLOT(slotTest()));
     connect(ui->pBLoad, SIGNAL(clicked()), this, SLOT(slotLoadExample()));
+
+    connect(ui->pBTestDialog, SIGNAL(clicked()), this, SLOT(slotShowTestDialog()));
+    connect(ui->pBTestMainWindow, SIGNAL(clicked()), this, SLOT(slotShowTestMainWindow()));
 
     // tabs
     connect(ui->pBBasicColorPicker, SIGNAL(clicked()), this, SLOT(slotPickColor()));
@@ -34,7 +39,6 @@ void MainDialog::createGUI()
 {
     setWindowTitle(QString("%1 - %2").arg(D_PROG_NAME).arg(D_PROG_VERSION_STR));
 
-
     QFile t_mainSettings(":/settings/txt/main_elements.txt");
     t_mainSettings.open(QIODevice::ReadOnly);
     m_listMainSettings = QTextStream(&t_mainSettings).readAll().split("\n");
@@ -46,5 +50,8 @@ void MainDialog::createGUI()
     m_listInnerSettings = QTextStream(&t_innerSettings).readAll().split("\n");
     m_listInnerSettings = removeEmptyQStringFromQStringList(&m_listInnerSettings);
     t_innerSettings.close();
+
+    GUI_TestDialog = new TestDialog();
+    GUI_TestMainWindow = new TestMainWindow();
 }
 //------------------------------------------------------------------------------
