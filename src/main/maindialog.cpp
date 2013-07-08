@@ -7,10 +7,9 @@
 
 #include "src/dialogs/about/about.h"
 #include "src/defines/defines.h"
+#include "src/common/stringcommon.h"
 
 #include "src/debug/debughelper.h"
-
-
 
 
 
@@ -63,12 +62,14 @@ void MainDialog::createGUI()
     QFile t_mainSettings(":/settings/txt/main_elements.txt");
     t_mainSettings.open(QIODevice::ReadOnly);
     m_listMainSettings = QTextStream(&t_mainSettings).readAll().split("\n");
+    m_listMainSettings = removeEmptyQStringFromQStringList(&m_listMainSettings);
     t_mainSettings.close();
 
 
     QFile t_innerSettings(":/settings/txt/inner_elements.txt");
     t_innerSettings.open(QIODevice::ReadOnly);
     m_listInnerSettings = QTextStream(&t_innerSettings).readAll().split("\n");
+    m_listInnerSettings = removeEmptyQStringFromQStringList(&m_listInnerSettings);
     t_innerSettings.close();
 }
 //------------------------------------------------------------------------------
