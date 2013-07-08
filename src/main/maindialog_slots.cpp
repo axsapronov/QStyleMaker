@@ -30,9 +30,10 @@ void MainDialog::slotSaveStyle()
 {
     QString filename = QFileDialog::getSaveFileName(
                 this,
-                tr("Save Document"),
+                tr("Save QSS style"),
                 QDir::currentPath(),
                 tr("Qt Style Sheets (*.qss)") );
+
     if( !filename.isNull() )
     {
         QString text = ui->TECode->toPlainText();
@@ -54,7 +55,22 @@ void MainDialog::slotSaveStyle()
 //------------------------------------------------------------------------------
 void MainDialog::slotLoadExample()
 {
-    myDebug() << "Load style";
+    QFileDialog::Options options;
+    QString selectedFilter;
+    QString fileName = QFileDialog::getOpenFileName(this,
+                                                    tr("Open QSS style"),
+                                                    "",
+                                                    tr("Qt Style Sheets (*.qss)"),
+                                                    &selectedFilter,
+                                                    options);
+    if (!fileName.isEmpty())
+    {
+        QFile t_file(fileName);
+        t_file.open(QIODevice::ReadOnly);
+        QString t_text = QTextStream(&t_file).readAll();
+        t_file.close();
+        ui->TECode->setText(t_text);
+    }
 }
 //------------------------------------------------------------------------------
 void MainDialog::slotUpdatePreview()
