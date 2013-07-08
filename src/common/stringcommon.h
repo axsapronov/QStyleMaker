@@ -11,4 +11,6 @@
  */
 QStringList removeEmptyQStringFromQStringList(QStringList *list);
 
+QStringList getListFromFile(QString f_path);
+
 #endif // __STRINGCOMMON__H

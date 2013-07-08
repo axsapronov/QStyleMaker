@@ -1,0 +1,11 @@
+background-color
+alternate-background-color
+border-color 
+border-left-color
+border-right-color
+border-top-color
+border-bottom-color
+color
+gridline-color
+selection-background-color
+selection-color

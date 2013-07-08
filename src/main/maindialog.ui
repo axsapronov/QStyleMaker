@@ -83,6 +83,12 @@
           <widget class="QComboBox" name="comBElements"/>
          </item>
          <item>
+          <widget class="QComboBox" name="comBProperties"/>
+         </item>
+         <item>
+          <widget class="QComboBox" name="comBStates"/>
+         </item>
+         <item>
           <widget class="QPushButton" name="pBBasicColorPicker">
            <property name="maximumSize">
             <size>
@@ -176,7 +182,7 @@
      </property>
     </widget>
    </item>
-   <item row="3" column="1" rowspan="4">
+   <item row="3" column="1" rowspan="6">
     <widget class="QWidget" name="widgetView" native="true">
      <property name="minimumSize">
       <size>
@@ -337,11 +343,6 @@ sdfg dsfg</string>
        </widget>
       </item>
      </layout>
-     <zorder>pBTestDialog</zorder>
-     <zorder>pBTestDialog</zorder>
-     <zorder>layoutWidget</zorder>
-     <zorder>layoutWidget_2</zorder>
-     <zorder>label_6</zorder>
     </widget>
    </item>
    <item row="4" column="0">
@@ -351,33 +352,33 @@ sdfg dsfg</string>
      </property>
     </widget>
    </item>
-   <item row="5" column="0">
+   <item row="7" column="0">
     <widget class="QPushButton" name="pBTestDialog">
      <property name="text">
       <string>Test dialog</string>
      </property>
     </widget>
    </item>
-   <item row="6" column="0">
+   <item row="8" column="0">
     <widget class="QPushButton" name="pBTestMainWindow">
      <property name="text">
       <string>Test mainwindow</string>
      </property>
     </widget>
    </item>
-   <item row="7" column="0">
+   <item row="9" column="0">
     <widget class="Line" name="line">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
     </widget>
    </item>
-   <item row="7" column="1" rowspan="2">
+   <item row="9" column="1" rowspan="2">
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <widget class="QPushButton" name="pBLoad">
        <property name="text">
-        <string>Load example</string>
+        <string>Load from file</string>
        </property>
       </widget>
      </item>
@@ -393,21 +394,21 @@ sdfg dsfg</string>
      </item>
     </layout>
    </item>
-   <item row="8" column="0">
+   <item row="10" column="0">
     <widget class="QPushButton" name="pBHomePage">
      <property name="text">
       <string>Home page</string>
      </property>
     </widget>
    </item>
-   <item row="9" column="0">
+   <item row="11" column="0">
     <widget class="QPushButton" name="pBAbout">
      <property name="text">
       <string>About</string>
      </property>
     </widget>
    </item>
-   <item row="9" column="1">
+   <item row="11" column="1">
     <layout class="QHBoxLayout" name="horizontalLayout_4">
      <item>
       <widget class="QPushButton" name="pBQuit">
@@ -420,6 +421,20 @@ sdfg dsfg</string>
       </widget>
      </item>
     </layout>
+   </item>
+   <item row="5" column="0">
+    <widget class="QPushButton" name="pBExamples">
+     <property name="text">
+      <string>Examples</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0">
+    <widget class="Line" name="line_4">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>

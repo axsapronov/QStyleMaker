@@ -2,6 +2,9 @@
     <qresource prefix="/settings">
         <file>txt/inner_elements.txt</file>
         <file>txt/main_elements.txt</file>
+        <file>txt/all_elements.txt</file>
+        <file>txt/properties.txt</file>
+        <file>txt/states.txt</file>
     </qresource>
     <qresource prefix="/icons">
         <file>images/icon.png</file>

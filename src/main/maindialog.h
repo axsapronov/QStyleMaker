@@ -56,6 +56,8 @@ private:
 
     QStringList m_listMainSettings;
     QStringList m_listInnerSettings;
+    QStringList m_listProperties;
+    QStringList m_listStates;
 
     enum m_TABS {TAB_MAIN = 0,
               TAB_INNER};
