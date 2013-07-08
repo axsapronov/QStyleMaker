@@ -84,6 +84,13 @@
       </widget>
      </item>
      <item>
+      <widget class="QPushButton" name="pBLoad">
+       <property name="text">
+        <string>Load example</string>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QPushButton" name="pBSave">
        <property name="text">
         <string>Save to file</string>

@@ -5,7 +5,6 @@
 #include <QTranslator>
 #include <QLocale>
 
-
 #include "src/defines/defines.h"
 
 int main(int argc, char *argv[])
@@ -19,10 +18,8 @@ int main(int argc, char *argv[])
     QTextCodec::setCodecForLocale(codec);
     QTextCodec::setCodecForTr(codec);
 
-
     MainDialog w;
     w.show();
-
 
     return a.exec();
 }

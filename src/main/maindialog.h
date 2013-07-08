@@ -28,6 +28,7 @@ private slots:
     void slotUpdatePreview();
     void slotShowAboutDialog();
     void slotOpenHomePage();
+    void slotLoadExample();
 
     void slotSelectTab(int);
 

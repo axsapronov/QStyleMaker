@@ -49,6 +49,7 @@ void MainDialog::createConnects()
     connect(ui->pBSave, SIGNAL(clicked()), this, SLOT(slotSaveStyle()));
     connect(ui->pBQuit, SIGNAL(clicked()), this, SLOT(slotQuit()));
     connect(ui->pBTest, SIGNAL(clicked()), this, SLOT(slotTest()));
+    connect(ui->pBLoad, SIGNAL(clicked()), this, SLOT(slotLoadExample()));
 
     connect(ui->listWidget, SIGNAL(itemSelectionChanged()), this, SLOT(slotUpdatePreview()));
     connect(ui->listWidget, SIGNAL(currentRowChanged(int)), this, SLOT(slotSelectTab(int)));
@@ -69,30 +70,33 @@ void MainDialog::createGUI()
     t_innerSettings.open(QIODevice::ReadOnly);
     m_listInnerSettings = QTextStream(&t_innerSettings).readAll().split("\n");
     t_innerSettings.close();
-
-
 }
 //------------------------------------------------------------------------------
 void MainDialog::slotQuit()
 {
     // save or not
-
+    myDebug() << "Quit";
     qApp->quit();
 }
 //------------------------------------------------------------------------------
 void MainDialog::slotTest()
 {
-
+    myDebug() << "Test";
 }
 //------------------------------------------------------------------------------
 void MainDialog::slotSaveStyle()
 {
-
+    myDebug() << "Save style";
+}
+//------------------------------------------------------------------------------
+void MainDialog::slotLoadExample()
+{
+    myDebug() << "Load style";
 }
 //------------------------------------------------------------------------------
 void MainDialog::slotUpdatePreview()
 {
-    //myDebug() << "update preview";
+    myDebug() << "update preview";
 }
 //------------------------------------------------------------------------------
 void MainDialog::slotShowAboutDialog()
