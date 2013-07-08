@@ -3,6 +3,7 @@
 
 #include <QDesktopServices> /// tray
 #include <QUrl>
+#include <QColorDialog>
 #include <QFile>
 
 #include "src/dialogs/about/about.h"
@@ -50,6 +51,9 @@ void MainDialog::createConnects()
     connect(ui->pBTest, SIGNAL(clicked()), this, SLOT(slotTest()));
     connect(ui->pBLoad, SIGNAL(clicked()), this, SLOT(slotLoadExample()));
 
+    // tabs
+    connect(ui->pBBasicColorPicker, SIGNAL(clicked()), this, SLOT(slotPickColor()));
+
     connect(ui->listWidget, SIGNAL(itemSelectionChanged()), this, SLOT(slotUpdatePreview()));
     connect(ui->listWidget, SIGNAL(currentRowChanged(int)), this, SLOT(slotSelectTab(int)));
 
@@ -64,7 +68,6 @@ void MainDialog::createGUI()
     m_listMainSettings = QTextStream(&t_mainSettings).readAll().split("\n");
     m_listMainSettings = removeEmptyQStringFromQStringList(&m_listMainSettings);
     t_mainSettings.close();
-
 
     QFile t_innerSettings(":/settings/txt/inner_elements.txt");
     t_innerSettings.open(QIODevice::ReadOnly);
@@ -116,14 +119,25 @@ void MainDialog::slotSelectTab(int f_numberTab)
     ui->comBElements->clear();
     switch ( f_numberTab )
     {
-       case TAB_MAIN:
-          ui->comBElements->addItems(m_listMainSettings);
-          break;
-       case TAB_INNER:
-          ui->comBElements->addItems(m_listInnerSettings);
-          break;
-       default:
+    case TAB_MAIN:
+        ui->comBElements->addItems(m_listMainSettings);
+        break;
+    case TAB_INNER:
+        ui->comBElements->addItems(m_listInnerSettings);
+        break;
+    default:
         myDebug() << "[ERROR]";
+    }
+}
+//------------------------------------------------------------------------------
+void MainDialog::slotPickColor()
+{
+    QColor color;
+    color = QColorDialog::getColor(Qt::green, this);
+    if (color.isValid()) {
+        ui->LAColor->setText(color.name());
+        ui->LAColor->setPalette(QPalette(color));
+        ui->LAColor->setAutoFillBackground(true);
     }
 }
 //------------------------------------------------------------------------------

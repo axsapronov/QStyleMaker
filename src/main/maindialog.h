@@ -30,6 +30,9 @@ private slots:
     void slotOpenHomePage();
     void slotLoadExample();
 
+
+    void slotPickColor();
+
     void slotSelectTab(int);
 
 private:
