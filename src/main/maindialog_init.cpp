@@ -5,6 +5,7 @@
 #include <QUrl>
 #include <QColorDialog>
 #include <QFile>
+#include <QMenu>
 
 
 #include "src/defines/defines.h"
@@ -43,25 +44,23 @@ void MainDialog::createConnects()
     connect(ui->pBHomePage, SIGNAL(clicked()), this, SLOT(slotOpenHomePage()));
 
     connect(ui->tabs, SIGNAL(currentChanged(int)), this, SLOT(slotResizePreview(int)));
-
-
 }
 //------------------------------------------------------------------------------
 void MainDialog::createGUI()
 {
     setWindowTitle(QString("%1 - %2").arg(D_PROG_NAME).arg(D_PROG_VERSION_STR));
 
-//    QFile t_mainSettings(":/settings/txt/main_elements.txt");
-//    t_mainSettings.open(QIODevice::ReadOnly);
-//    m_listMainSettings = QTextStream(&t_mainSettings).readAll().split("\n");
-//    m_listMainSettings = removeEmptyQStringFromQStringList(&m_listMainSettings);
-//    t_mainSettings.close();
+    //    QFile t_mainSettings(":/settings/txt/main_elements.txt");
+    //    t_mainSettings.open(QIODevice::ReadOnly);
+    //    m_listMainSettings = QTextStream(&t_mainSettings).readAll().split("\n");
+    //    m_listMainSettings = removeEmptyQStringFromQStringList(&m_listMainSettings);
+    //    t_mainSettings.close();
 
-//    QFile t_innerSettings(":/settings/txt/inner_elements.txt");
-//    t_innerSettings.open(QIODevice::ReadOnly);
-//    m_listInnerSettings = QTextStream(&t_innerSettings).readAll().split("\n");
-//    m_listInnerSettings = removeEmptyQStringFromQStringList(&m_listInnerSettings);
-//    t_innerSettings.close();
+    //    QFile t_innerSettings(":/settings/txt/inner_elements.txt");
+    //    t_innerSettings.open(QIODevice::ReadOnly);
+    //    m_listInnerSettings = QTextStream(&t_innerSettings).readAll().split("\n");
+    //    m_listInnerSettings = removeEmptyQStringFromQStringList(&m_listInnerSettings);
+    //    t_innerSettings.close();
 
     m_listMainSettings = getListFromFile(":/settings/txt/main_elements.txt");
     m_listInnerSettings = getListFromFile(":/settings/txt/inner_elements.txt");
@@ -84,5 +83,12 @@ void MainDialog::createGUI()
     ui->comBStates->addItems(m_listStates);
 
     ui->widgetView->setMinimumHeight(200);
+
+    QMenu *m_menu = new QMenu(ui->pBExamples);
+    for (int i = 0; i < D_EXAMPLES_COUNT; i++)
+        m_menu->addAction(QString("Example %1").arg(i + 1), this, SLOT(slotOpenExample()));
+
+    ui->pBExamples->setMenu(m_menu);
+
 }
 //------------------------------------------------------------------------------

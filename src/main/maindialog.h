@@ -45,6 +45,8 @@ private slots:
     void slotSelectTab(int);
     void slotResizePreview(int);
 
+    void slotOpenExample();
+
 private:
     Ui::MainDialog *ui;
 

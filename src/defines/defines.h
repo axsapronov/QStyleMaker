@@ -11,4 +11,6 @@
 
 #define D_HOME_PAGE QDir::currentPath()
 
+#define D_EXAMPLES_COUNT 5
+
 #endif // DEFINES_H

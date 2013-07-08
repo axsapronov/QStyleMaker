@@ -9,4 +9,11 @@
     <qresource prefix="/icons">
         <file>images/icon.png</file>
     </qresource>
+    <qresource prefix="/examples">
+        <file>examples/example1.qss</file>
+        <file>examples/example2.qss</file>
+        <file>examples/example3.qss</file>
+        <file>examples/example4.qss</file>
+        <file>examples/example5.qss</file>
+    </qresource>
 </RCC>

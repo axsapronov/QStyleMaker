@@ -159,5 +159,18 @@ void MainDialog::slotShowTestMainWindow()
     GUI_TestMainWindow->show();
 }
 //------------------------------------------------------------------------------
+void MainDialog::slotOpenExample()
+{
+    QAction *t = (QAction*) QObject::sender();
+    QString t_path = ":/examples/examples/" + t->text().replace(" ", "").toLower() + ".qss";
+
+    QFile t_file(t_path);
+    t_file.open(QIODevice::ReadOnly);
+    QString t_text = QTextStream(&t_file).readAll();
+    t_file.close();
+    ui->TECode->setText(t_text);
+    slotUpdatePreview();
+}
+//------------------------------------------------------------------------------
 
 
