@@ -70,12 +70,13 @@ void MainDialog::slotLoadExample()
         QString t_text = QTextStream(&t_file).readAll();
         t_file.close();
         ui->TECode->setText(t_text);
+        slotUpdatePreview();
     }
 }
 //------------------------------------------------------------------------------
 void MainDialog::slotUpdatePreview()
 {
-    myDebug() << "update preview";
+    ui->widgetView->setStyleSheet(ui->TECode->toPlainText());
 }
 //------------------------------------------------------------------------------
 void MainDialog::slotShowAboutDialog()
@@ -119,9 +120,31 @@ void MainDialog::slotPickColor()
 void MainDialog::slotResizePreview(int f_tabNumber)
 {
     if (f_tabNumber == TAB_BASIC)
-        ui->widgetView->setMinimumHeight(400);
+        ui->widgetView->setMinimumHeight(300);
     if (f_tabNumber == TAB_ADVANCE)
         ui->widgetView->setMinimumHeight(200);
+}
+//------------------------------------------------------------------------------
+void MainDialog::slotAdvancedDefault()
+{
+    ui->widgetView->setStyleSheet("");
+}
+//------------------------------------------------------------------------------
+void MainDialog::slotBasicDefault()
+{
+    ui->widgetView->setStyleSheet("");
+}
+//------------------------------------------------------------------------------
+void MainDialog::slotBasicSave()
+{
+    ui->widgetView->setStyleSheet(ui->TECode->toPlainText());
+    slotUpdatePreview();
+}
+//------------------------------------------------------------------------------
+void MainDialog::slotAdvancedSave()
+{
+    ui->widgetView->setStyleSheet(ui->TECode->toPlainText());
+    slotUpdatePreview();
 }
 //------------------------------------------------------------------------------
 void MainDialog::slotShowTestDialog()

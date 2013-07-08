@@ -34,8 +34,12 @@ private slots:
     void slotOpenHomePage();
     void slotLoadExample();
 
-
     void slotPickColor();
+    void slotBasicSave();
+    void slotBasicDefault();
+
+    void slotAdvancedSave();
+    void slotAdvancedDefault();
 
     void slotSelectTab(int);
     void slotResizePreview(int);

@@ -3,4 +3,7 @@
         <file>txt/inner_elements.txt</file>
         <file>txt/main_elements.txt</file>
     </qresource>
+    <qresource prefix="/icons">
+        <file>images/icon.png</file>
+    </qresource>
 </RCC>

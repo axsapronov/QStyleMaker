@@ -29,14 +29,22 @@ void MainDialog::createConnects()
 
     // tabs
     connect(ui->pBBasicColorPicker, SIGNAL(clicked()), this, SLOT(slotPickColor()));
+    connect(ui->pBBasicSave, SIGNAL(clicked()), this, SLOT(slotBasicSave()));
+    connect(ui->pBBasicDefault, SIGNAL(clicked()), this, SLOT(slotBasicDefault()));
+
+    connect(ui->pBAdvancedSave, SIGNAL(clicked()), this, SLOT(slotAdvancedSave()));
+    connect(ui->pBAdvancedDefault, SIGNAL(clicked()), this, SLOT(slotAdvancedDefault()));
 
     connect(ui->listWidget, SIGNAL(itemSelectionChanged()), this, SLOT(slotUpdatePreview()));
     connect(ui->listWidget, SIGNAL(currentRowChanged(int)), this, SLOT(slotSelectTab(int)));
+
 
     connect(ui->pBAbout, SIGNAL(clicked()), this, SLOT(slotShowAboutDialog()));
     connect(ui->pBHomePage, SIGNAL(clicked()), this, SLOT(slotOpenHomePage()));
 
     connect(ui->tabs, SIGNAL(currentChanged(int)), this, SLOT(slotResizePreview(int)));
+
+
 }
 //------------------------------------------------------------------------------
 void MainDialog::createGUI()
@@ -60,5 +68,13 @@ void MainDialog::createGUI()
 
     //QSSHighlighter *highlighter = new QSSHighlighter(ui->TECode->document());
     Highlighter *highlighter = new Highlighter(ui->TECode->document());
+
+    /*
+    QPalette palette;
+    palette.setBrush(ui->widgetIcon->backgroundRole(), QBrush(QImage(":/icons/images/icon.png")));
+    ui->widgetIcon->setPalette(palette);
+    */
+
+    ui->widgetView->setMinimumHeight(200);
 }
 //------------------------------------------------------------------------------
