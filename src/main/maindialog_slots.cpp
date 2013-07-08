@@ -6,6 +6,8 @@
 #include <QUrl>
 #include <QColorDialog>
 #include <QFile>
+#include <QDir>
+#include <QFileDialog>
 
 #include "src/dialogs/about/about.h"
 #include "src/defines/defines.h"
@@ -26,7 +28,28 @@ void MainDialog::slotQuit()
 //------------------------------------------------------------------------------
 void MainDialog::slotSaveStyle()
 {
-    myDebug() << "Save style";
+    QString filename = QFileDialog::getSaveFileName(
+                this,
+                tr("Save Document"),
+                QDir::currentPath(),
+                tr("Qt Style Sheets (*.qss)") );
+    if( !filename.isNull() )
+    {
+        QString text = ui->TECode->toPlainText();
+
+        QFile fileOut(filename);
+        if (!fileOut.open(QIODevice::WriteOnly | QIODevice::Text))
+        {
+            return ;
+        }
+
+        QTextStream streamFileOut(&fileOut);
+        streamFileOut.setCodec("UTF-8");
+        streamFileOut << text;
+        streamFileOut.flush();
+
+        fileOut.close();
+    }
 }
 //------------------------------------------------------------------------------
 void MainDialog::slotLoadExample()
