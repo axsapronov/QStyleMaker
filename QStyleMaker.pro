@@ -35,7 +35,9 @@ SOURCES += main.cpp\
         maindialog.cpp \
         src/debug/debughelper.cpp \
         src/dialogs/about/about.cpp \
-        src/common/stringcommon.cpp
+        src/common/stringcommon.cpp \
+    src/main/maindialog_slots.cpp \
+    src/main/maindialog_init.cpp
 
 HEADERS  += maindialog.h \
         src/defines/defines.h \
