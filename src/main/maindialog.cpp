@@ -15,6 +15,7 @@ MainDialog::~MainDialog()
 {
     //delete GUI_AboutDialog;
     delete GUI_TestMainWindow;
+    delete m_highlighter;
     delete GUI_TestDialog;
     delete ui;
 }

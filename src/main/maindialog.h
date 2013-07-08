@@ -7,6 +7,7 @@
 class AboutDialog;
 class TestMainWindow;
 class TestDialog;
+class Highlighter;
 
 namespace Ui {
 class MainDialog;
@@ -50,6 +51,7 @@ private:
     AboutDialog *GUI_AboutDialog;
     TestMainWindow *GUI_TestMainWindow;
     TestDialog *GUI_TestDialog;
+    Highlighter *m_highlighter;
 
     void createConnects();
     void createGUI();

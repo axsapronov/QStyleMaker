@@ -12,10 +12,10 @@
 
 #include "src/debug/debughelper.h"
 
-#include "src/test/testdialog.h"
-#include "src/test/testmainwindow.h"
+#include "src/dialogs/test/testdialog.h"
+#include "src/dialogs/test/testmainwindow.h"
 
-#include "src/qsseditor/highlighter.h"
+#include "src/dialogs/qsseditor/highlighter.h"
 
 //------------------------------------------------------------------------------
 void MainDialog::createConnects()
@@ -72,7 +72,7 @@ void MainDialog::createGUI()
     GUI_TestMainWindow = new TestMainWindow();
 
     //QSSHighlighter *highlighter = new QSSHighlighter(ui->TECode->document());
-    Highlighter *highlighter = new Highlighter(ui->TECode->document());
+    Highlighter *m_highlighter = new Highlighter(ui->TECode->document());
 
     /*
     QPalette palette;

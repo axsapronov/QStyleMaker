@@ -12,8 +12,8 @@
 #include "src/dialogs/about/about.h"
 #include "src/defines/defines.h"
 
-#include "src/test/testdialog.h"
-#include "src/test/testmainwindow.h"
+#include "src/dialogs/test/testdialog.h"
+#include "src/dialogs/test/testmainwindow.h"
 
 #include "src/debug/debughelper.h"
 

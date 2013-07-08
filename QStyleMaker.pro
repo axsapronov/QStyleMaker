@@ -38,23 +38,23 @@ SOURCES += main.cpp\
         src/common/stringcommon.cpp \
         src/main/maindialog_slots.cpp \
         src/main/maindialog_init.cpp \
-        src/test/testdialog.cpp \
-        src/test/testmainwindow.cpp \
-        src/qsseditor/highlighter.cpp
+        src/dialogs/test/testdialog.cpp \
+        src/dialogs/test/testmainwindow.cpp \
+        src/dialogs/qsseditor/highlighter.cpp
 
 HEADERS  += maindialog.h \
         src/defines/defines.h \
         src/debug/debughelper.h \
         src/dialogs/about/about.h \
         src/common/stringcommon.h \
-        src/test/testdialog.h \
-        src/test/testmainwindow.h \
-        src/qsseditor/highlighter.h
+        src/dialogs/test/testdialog.h \
+        src/dialogs/test/testmainwindow.h \
+        src/dialogs/qsseditor/highlighter.h
 
 FORMS    += maindialog.ui \
         src/dialogs/about/about.ui \
-    src/test/testdialog.ui \
-    src/test/testmainwindow.ui
+    src/dialogs/test/testdialog.ui \
+    src/dialogs/test/testmainwindow.ui
 
 RESOURCES += \
     resources/resources.qrc
