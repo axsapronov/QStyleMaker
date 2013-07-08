@@ -1,7 +1,17 @@
 #include "maindialog.h"
 #include "ui_maindialog.h"
 
-#include <QDebug>
+#include <QDesktopServices> /// tray
+#include <QUrl>
+
+#include "src/dialogs/about/about.h"
+#include "src/defines/defines.h"
+
+#include "src/debug/debughelper.h"
+
+
+
+
 
 MainDialog::MainDialog(QWidget *parent) :
     QDialog(parent),
@@ -9,13 +19,14 @@ MainDialog::MainDialog(QWidget *parent) :
 {
     ui->setupUi(this);
 
-
+    setWindowTitle(QString("%1 - %2").arg(D_PROG_NAME).arg(D_PROG_VERSION_STR));
 
     createConnects();
 }
 //------------------------------------------------------------------------------
 MainDialog::~MainDialog()
 {
+    //delete GUI_AboutDialog;
     delete ui;
 }
 //------------------------------------------------------------------------------
@@ -39,11 +50,17 @@ void MainDialog::createConnects()
 
     connect(ui->listWidget, SIGNAL(currentRowChanged(int)), ui->stackedWidget, SLOT(setCurrentIndex(int)));
     connect(ui->listWidget, SIGNAL(itemSelectionChanged()), this, SLOT(slotUpdatePreview()));
+
+    connect(ui->pBAbout, SIGNAL(clicked()), this, SLOT(slotShowAboutDialog()));
+    connect(ui->pBHomePage, SIGNAL(clicked()), this, SLOT(slotOpenHomePage()));
+
 }
 //------------------------------------------------------------------------------
 void MainDialog::slotQuit()
 {
+    // save or not
 
+    qApp->quit();
 }
 //------------------------------------------------------------------------------
 void MainDialog::slotTest()
@@ -58,7 +75,17 @@ void MainDialog::slotSaveStyle()
 //------------------------------------------------------------------------------
 void MainDialog::slotUpdatePreview()
 {
-    qDebug() << "update preview";
+    myDebug() << "update preview";
 }
-
+//------------------------------------------------------------------------------
+void MainDialog::slotShowAboutDialog()
+{
+    GUI_AboutDialog = new AboutDialog();
+    GUI_AboutDialog->show();
+}
+//------------------------------------------------------------------------------
+void MainDialog::slotOpenHomePage()
+{
+    QDesktopServices::openUrl(QUrl(D_WEB_SITE));
+}
 //------------------------------------------------------------------------------

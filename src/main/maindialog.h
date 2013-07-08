@@ -3,6 +3,8 @@
 
 #include <QDialog>
 
+
+class AboutDialog;
 namespace Ui {
 class MainDialog;
 }
@@ -24,10 +26,14 @@ private slots:
     void slotQuit();
 
     void slotUpdatePreview();
+    void slotShowAboutDialog();
+    void slotOpenHomePage();
 
 private:
     Ui::MainDialog *ui;
 
+
+    AboutDialog *GUI_AboutDialog;
     void createConnects();
 };
 

@@ -17,19 +17,30 @@ MOC_DIR     = build/moc
 RCC_DIR     = build/rc
 UI_DIR      = build/ui
 
-
 DEPENDPATH += \
-        src/main
+        src/main \
+        src/defines \
+        src/debug \
+        src/dialogs/about
 
 INCLUDEPATH += \
-        src/main
+        src/main \
+        src/defines \
+        src/debug \
+        src/dialogs/about
 
 SOURCES += main.cpp\
-        maindialog.cpp
+        maindialog.cpp \
+        src/debug/debughelper.cpp \
+        src/dialogs/about/about.cpp
 
-HEADERS  += maindialog.h
+HEADERS  += maindialog.h \
+        src/defines/defines.h \
+        src/debug/debughelper.h \
+        src/dialogs/about/about.h
 
-FORMS    += maindialog.ui
+FORMS    += maindialog.ui \
+        src/dialogs/about/about.ui
 
 RESOURCES += \
     resources/resources.qrc
