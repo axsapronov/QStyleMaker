@@ -1,1 +1,6 @@
-<RCC/>
+<RCC>
+    <qresource prefix="/settings">
+        <file>txt/inner_elements.txt</file>
+        <file>txt/main_elements.txt</file>
+    </qresource>
+</RCC>

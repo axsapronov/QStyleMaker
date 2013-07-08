@@ -3,6 +3,7 @@
 
 #include <QDesktopServices> /// tray
 #include <QUrl>
+#include <QFile>
 
 #include "src/dialogs/about/about.h"
 #include "src/defines/defines.h"
@@ -21,6 +22,7 @@ MainDialog::MainDialog(QWidget *parent) :
 
     setWindowTitle(QString("%1 - %2").arg(D_PROG_NAME).arg(D_PROG_VERSION_STR));
 
+    createGUI();
     createConnects();
 }
 //------------------------------------------------------------------------------
@@ -55,6 +57,22 @@ void MainDialog::createConnects()
     connect(ui->pBHomePage, SIGNAL(clicked()), this, SLOT(slotOpenHomePage()));
 }
 //------------------------------------------------------------------------------
+void MainDialog::createGUI()
+{
+    QFile t_mainSettings(":/settings/txt/main_elements.txt");
+    t_mainSettings.open(QIODevice::ReadOnly);
+    m_listMainSettings = QTextStream(&t_mainSettings).readAll().split("\n");
+    t_mainSettings.close();
+
+
+    QFile t_innerSettings(":/settings/txt/inner_elements.txt");
+    t_innerSettings.open(QIODevice::ReadOnly);
+    m_listInnerSettings = QTextStream(&t_innerSettings).readAll().split("\n");
+    t_innerSettings.close();
+
+
+}
+//------------------------------------------------------------------------------
 void MainDialog::slotQuit()
 {
     // save or not
@@ -74,7 +92,7 @@ void MainDialog::slotSaveStyle()
 //------------------------------------------------------------------------------
 void MainDialog::slotUpdatePreview()
 {
-    myDebug() << "update preview";
+    //myDebug() << "update preview";
 }
 //------------------------------------------------------------------------------
 void MainDialog::slotShowAboutDialog()
@@ -91,5 +109,6 @@ void MainDialog::slotOpenHomePage()
 void MainDialog::slotSelectTab(int f_numberTab)
 {
     myDebug() << f_numberTab;
+
 }
 //------------------------------------------------------------------------------

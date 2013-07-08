@@ -34,9 +34,14 @@ private slots:
 private:
     Ui::MainDialog *ui;
 
-
     AboutDialog *GUI_AboutDialog;
+
+
     void createConnects();
+    void createGUI();
+
+    QStringList m_listMainSettings;
+    QStringList m_listInnerSettings;
 };
 
 #endif // MAINDIALOG_H
