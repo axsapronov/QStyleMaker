@@ -36,18 +36,20 @@ SOURCES += main.cpp\
         src/debug/debughelper.cpp \
         src/dialogs/about/about.cpp \
         src/common/stringcommon.cpp \
-    src/main/maindialog_slots.cpp \
-    src/main/maindialog_init.cpp \
-    src/test/testdialog.cpp \
-    src/test/testmainwindow.cpp
+        src/main/maindialog_slots.cpp \
+        src/main/maindialog_init.cpp \
+        src/test/testdialog.cpp \
+        src/test/testmainwindow.cpp \
+        src/qsseditor/highlighter.cpp
 
 HEADERS  += maindialog.h \
         src/defines/defines.h \
         src/debug/debughelper.h \
         src/dialogs/about/about.h \
         src/common/stringcommon.h \
-    src/test/testdialog.h \
-    src/test/testmainwindow.h
+        src/test/testdialog.h \
+        src/test/testmainwindow.h \
+        src/qsseditor/highlighter.h
 
 FORMS    += maindialog.ui \
         src/dialogs/about/about.ui \

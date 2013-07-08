@@ -15,6 +15,8 @@
 #include "src/test/testdialog.h"
 #include "src/test/testmainwindow.h"
 
+#include "src/qsseditor/highlighter.h"
+
 //------------------------------------------------------------------------------
 void MainDialog::createConnects()
 {
@@ -55,5 +57,8 @@ void MainDialog::createGUI()
 
     GUI_TestDialog = new TestDialog();
     GUI_TestMainWindow = new TestMainWindow();
+
+    //QSSHighlighter *highlighter = new QSSHighlighter(ui->TECode->document());
+    Highlighter *highlighter = new Highlighter(ui->TECode->document());
 }
 //------------------------------------------------------------------------------
